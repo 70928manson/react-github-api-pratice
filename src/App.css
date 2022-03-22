@@ -1,38 +1,87 @@
-.App {
+@import 
+url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import '~bootstrap/scss/bootstrap';
+
+.App{
   text-align: center;
+  display: grid;
+  grid-template-rows: 70px auto;
+  grid-template-columns: minmax(50px,1fr) 1fr minmax(50px,1fr);
+  grid-row-gap: 2em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*header*/
+#header{
+  grid-column: 1/5;
+  grid-row: 1/2;
+  background-color: #00688B;
+}
+#header h1{
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 10px;
+  color: #FFF;
+}
+div.wrapper{
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/*search*/
+#search-bar{
+  width: 100%;
+  position: relative
+}
+#search-bar input{
+  margin-top: 20px;
+  width: 258px;
+  border: 3px solid #00B4CC;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+#search-bar input:focus{
+  color: #00B4CC;
+}
+.searchButton{
+  margin-left: -9px;
+  margin-top: 20px;
+  position: absolute;  
+  /* right: -50px; */
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+}
+.searchButton i{
+  font-size: 20px;
+}
+
+/*3/20待施工*/
+@media only screen and (max-width: 650px) {
+  .App {
+    overflow: hidden;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 70px auto;
+    grid-template-columns: 2px 1fr 2px;
+    grid-row-gap: 2em;
   }
+  div.wrapper {
+    margin-right: 10%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  #header h1{
+    width: auto;
+    grid-column: 1/4;
   }
-  to {
-    transform: rotate(360deg);
+  div#search-bar {
+   width: 80%;
   }
 }
