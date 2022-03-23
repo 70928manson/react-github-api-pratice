@@ -1,7 +1,11 @@
 import React from "react";
 
 const Results = () => {
-    return <h2>results</h2>
+    return <ul>
+        <li>Repo 1</li>
+        <li>Repo x...</li>
+        <li>Repo 10</li>
+    </ul>
 };
 
 
