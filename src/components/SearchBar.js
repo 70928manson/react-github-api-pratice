@@ -16,7 +16,7 @@ const SearchBar = () => {
 
         try {
             // 3/23:測試axios.get(`~`).then以外的寫法
-            const result = await axios(`https://api.github.com/users/${searchInput}`);   //searchInput -> 輸入的用戶名稱
+            const result = await axios(`https://api.github.com/users/${searchInput}/repos`);   //searchInput -> 輸入的用戶名稱
 
             setRepos(result);
         }catch(err){
@@ -24,15 +24,14 @@ const SearchBar = () => {
         }
     }
 
-    console.log(repos);
-
+    // console.log(repos);
     return (
    <>
     <div style={{ padding: "20px" }}>
         <input type="text" placeholder="Enter user name" value={searchInput} onChange={handleChange} />
         <button onClick={handleClick}>Search</button>
     </div>
-    <Results />
+    <Results repos={repos} />
     </>
     );
 };
