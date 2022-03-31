@@ -6,7 +6,6 @@ const SearchBar = () => {
     const [searchInput, setSearchInput] = useState('');
     const [repos, setRepos] = useState([]);
 
-    //test style
     const handleChange = (e) => {
         setSearchInput(e.target.value);
     }
@@ -14,8 +13,7 @@ const SearchBar = () => {
     const handleClick = async () => {
         console.log(searchInput);
 
-        try {
-            // 3/23:測試axios.get(`~`).then以外的寫法
+        try {  
             const result = await axios(`https://api.github.com/users/${searchInput}/repos`);   //searchInput -> 輸入的用戶名稱
 
             setRepos(result);
@@ -31,7 +29,7 @@ const SearchBar = () => {
         <input type="text" placeholder="Enter user name" value={searchInput} onChange={handleChange} />
         <button onClick={handleClick}>Search</button>
     </div>
-    <Results repos={repos} />
+    <Results repos={repos} searchInput={searchInput}/>
     </>
     );
 };
