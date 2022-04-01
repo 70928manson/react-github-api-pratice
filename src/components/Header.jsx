@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
     return (
         <div id="header">
-            <h1>Header: Github repo search</h1>
+            <h1>Manson's Github repo search</h1>
         </div>
     )
 }
