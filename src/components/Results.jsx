@@ -1,13 +1,10 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useLocation, useParams, Link, useNavigate } from "react-router-dom";
-import { useSelector,useDispatch } from 'react-redux';
+import { useParams, Link, useNavigate } from "react-router-dom";
 import './Repo';
-import Repo from "./Repo";
 
-const Results = (props) => {
-
+const Results = () => {
   //在這邊得到username後 抓出repos = repos.data
   let { username } = useParams()
   const [repos, setRepos] = useState([]);
@@ -15,7 +12,6 @@ const Results = (props) => {
   let page = 1;
 
   useEffect(()=>{
-    console.log('execute function in useEffect');
     getRepos();
     window.addEventListener('scroll', handleScroll);
   },[]);
@@ -25,16 +21,14 @@ const Results = (props) => {
   
     try {
       //await -> 確保這個執行完下面才繼續執行  
-      console.log('before api, the page: ' ,page);
       const result = await axios.get(`https://api.github.com/users/${username}/repos?page=${page}&per_page=10`);
-      //item = result;
       const tenMoreRepos = [];
       result.data.forEach((data) => tenMoreRepos.push(data))
       setRepos((repos) => [...repos, ...tenMoreRepos]);
       //console.log('results: ' ,result);
       //console.log('item (repos): ' ,repos);
       page += 1;
-      //listRepos(repos);
+      window.addEventListener('scroll', handleScroll);
     }catch(err){
         console.log(err);
     }
@@ -44,12 +38,9 @@ const Results = (props) => {
   const handleScroll = (e) => {
     //當scroll到bottom，loading並發送api
     //如何判斷到bottom -> scrollTop + innerHeight >= scrollHeight
-    //console.log('Top: ' ,e.target.documentElement.scrollTop);
-    //console.log('innerHeight : ' ,window.innerHeight);
-    //console.log('Height: ' ,e.target.documentElement.scrollHeight);
-    if(e.target.documentElement.scrollTop + window.innerHeight >= e.target.documentElement.scrollHeight){
-      console.log('here is bottom of the page');
-      getRepos();
+    if(e.target.documentElement.scrollTop + window.innerHeight + 1 >= e.target.documentElement.scrollHeight){
+      setTimeout(getRepos, 1000);
+      window.removeEventListener('scroll', handleScroll);  //為什麼要remove -> 如果只有單純監聽，scroll到bottom時會不斷觸發條件，多次發送api請求導致一次load 20、30個repo
     }
   }
 
@@ -59,28 +50,26 @@ const Results = (props) => {
 
   const listRepos = 
       repos.length !==0 ? ( 
-      //onClick切換頁面，在新頁面getSingleRepo     () => getSingleRepo(item)
       repos.map((item, index) => 
           <div
-              key={item.id}
+              key= {index + item.id}  //只有item.id會發生兩個div擁有相同id的情況，解決辦法為加上index(這是好方法嘛)
               className="result-list">
                 <div>
                 第 {index+1+i} 個 <br />
                 Name: {item.name}  <br/>
                 Star: {item.stargazers_count}  <br/>
                 </div>
-               {/* <button onClick={repoDetail}>detail</button> */}
                 <button>
                   <Link to={`/user/${item.owner.login}/repos/${item.name}`}>detail</Link>
                 </button>
-                {/* <Repo repos={repos} /> */}
           </div>  
-        )  //repos.data.slice(0, 10) 只顯示10個
+        )
       ) : ( 
         <li>Loading...</li> 
       );
 
   return <ul>
+    作者: {username} <br />
     <button onClick={() => {n('/')}} >back to SearchBar</button> <br />
     {listRepos}
   </ul>

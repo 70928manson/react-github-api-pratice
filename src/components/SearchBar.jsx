@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
-import Results from "./Results";
+import { Link } from "react-router-dom";
 import Home from "./Home";
 
 const SearchBar = () => {

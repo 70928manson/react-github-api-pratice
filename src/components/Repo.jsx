@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { C, useNavigate,useParams } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 
 
 const Repo = () => {
@@ -18,8 +18,7 @@ const Repo = () => {
   console.log(username);
   console.log(repo);
 
-  //useEfect 頁面載入時就去請求資料
-  //const result = await axios(`https://api.github.com/users/${username}/repos/${repo}`);
+  //useEffect 頁面「render完成後」做某某事
 
   useEffect(()=>{
     console.log('execute function in useEffect');

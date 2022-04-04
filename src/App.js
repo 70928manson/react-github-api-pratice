@@ -3,9 +3,8 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Results from "./components/Results";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
 import './App.css';
-import { Routes, Route, Link, Outlet, useParams, useNavigate, RouteObject, useRoutes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 import Repo from "./components/Repo";
 
 //className動態綁定
