@@ -14,7 +14,7 @@ const path = require('path')
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'build')))
 
 // Automatically allow cross-origin requests
 app.use(cors());
@@ -22,21 +22,21 @@ app.use(cors());
 app.get('/', function(req, res) {
   console.log('hit');
   // http code
-  res.status(200).sendFile(path.join(__dirname, 'public/index.html'))
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
   // res.send('hello!')
 })
 
 app.get('/user/:username/repos', function(req, res) {
   console.log('hit');
   // http code
-  res.status(200).sendFile(path.join(__dirname, 'public/index.html'))
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
   // res.send('hello!')
 })
 
 app.get('/user/:username/repos/:repo', function(req, res) {
   console.log('hit');
   // http code
-  res.status(200).sendFile(path.join(__dirname, 'public/index.html'))
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
   // res.send('hello!')
 })
 
