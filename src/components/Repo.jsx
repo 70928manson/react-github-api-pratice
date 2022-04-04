@@ -15,10 +15,8 @@ const Repo = () => {
         network_count: 'Not found',
   }})
 
-  console.log(username);
-  console.log(repo);
-
-  //useEffect 頁面「render完成後」做某某事
+  //console.log(username);
+  //console.log(repo);
 
   useEffect(()=>{
     console.log('execute function in useEffect');
@@ -26,13 +24,10 @@ const Repo = () => {
 },[]);
 
   const getSingleRepo = async () => {
-    console.log('a');
-
+    //console.log('a');
     try {  
         const result = await axios.get(`https://api.github.com/repos/${username}/${repo}`)
-        //item = result;
         setItem(result);
-        console.log(result);
         console.log(item);
     }catch(err){
         console.log(err);
@@ -41,12 +36,14 @@ const Repo = () => {
   const n = useNavigate()
 
     return <div>
-        <p>歡迎來到單一repo頁面</p>
-        <button onClick={() => {n('/')}} >back to SearchBar</button> <br />
-        Repo name: { item.data.name } <br />
-        Repo description: { item.data.description } <br />
-        Repo network_count: { item.data.network_count } <br />
-        <a href={item.data.html_url} target="_blank">Repo網址按這裡</a>
+        <button onClick={() => {n('/')}} style={{ margin: '20px 5px' }}>back to SearchBar</button> <br />
+        <div className="repo">
+          <p>歡迎來到單一repo頁面</p>
+          <p>Repo name: { item.data.name }</p>
+          <p>Repo description: { item.data.description }</p>
+          <p>Repo stargazers_count: { item.data.stargazers_count }</p>
+          <a href={item.data.html_url} target="_blank">Repo's github link</a>
+        </div>
     </div>
 };
 

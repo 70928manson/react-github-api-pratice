@@ -2,81 +2,92 @@
 url(https://fonts.googleapis.com/css?family=Open+Sans);
 /* @import '~bootstrap/scss/bootstrap'; */
 
-.App{
-  text-align: center;
-  display: grid;
-  grid-template-rows: 70px auto;
-  grid-template-columns: minmax(50px,1fr) 1fr minmax(50px,1fr);
-  grid-row-gap: 2em;
+.app {
+  font-family:  "Microsoft Yahei", "微軟正黑體", sans-serif;
 }
 
 /*header*/
-#header{
+.header{
   grid-column: 1/5;
   grid-row: 1/2;
   background-color: #00688B;
+  padding: 5px;
 }
-#header h1{
+.header h1{
   text-align: left;
   margin-top: 20px;
   margin-left: 10px;
   color: #FFF;
 }
-div.wrapper{
-  grid-column: 2/3;
-  grid-row: 2/3;
-}
 
 /*search*/
-#search-bar{
+.search{
   width: 100%;
-  position: relative
+  position: relative;
+  height: 4.5rem;
+  margin-bottom: 40px;
 }
-#search-bar input{
+.search input{
   margin-top: 20px;
   width: 258px;
   border: 3px solid #00B4CC;
   padding: 5px;
-  height: 20px;
+  height: 100%;
   border-radius: 5px;
   outline: none;
   color: #9DBFAF;
 }
-#search-bar input:focus{
-  color: #00B4CC;
+.search input:focus{
+  color: black;
 }
-.searchButton{
+.search button{
   margin-left: -9px;
   margin-top: 20px;
   position: absolute;  
   /* right: -50px; */
-  width: 40px;
-  height: 36px;
+  width: 100px;
+  height: 2rem;
   border: 1px solid #00B4CC;
   background: #00B4CC;
   text-align: center;
-  color: #fff;
+  color: red;  /*red無效，route-link預設為藍色，直接在link style設定*/
   border-radius: 5px;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 15px;
 }
 .searchButton i{
   font-size: 20px;
 }
 
 /*home*/
-#home {
-  grid-column: 1/5;
-  grid-row: 1/2;
+.home {
+  background-color: #DCDCDC;
+  padding: 10px;
+  padding-top: 20px;
 }
 
-.result-list {
+/*repos*/
+.resultList {
   background-color: #dbd4d4e0;
   padding: 5px;
   margin: 5px;
 }
 
-/*3/20*/
+/*single repo*/
+.repo {
+  padding: 10px 0;
+  background-color: #dbd4d4e0;
+}
+
+.repo p{
+  padding: 25px;
+}
+
+.repo a{
+  padding: 25px;
+}
+
+/*2021 grid*/
 @media only screen and (max-width: 650px) {
   .App {
     overflow: hidden;

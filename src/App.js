@@ -39,7 +39,7 @@ const routerConfig  = [
 function App(){
   //useRoute達到js控管
   const element = useRoutes(routerConfig)
-  return <div>
+  return <div className="app">
     <Header />
       { element }
     <Footer />

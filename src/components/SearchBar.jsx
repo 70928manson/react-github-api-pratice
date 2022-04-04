@@ -12,14 +12,13 @@ const SearchBar = () => {
     // console.log(repos);
     return (
    <>
-    <div style={{ padding: "20px" }}>
+    <div className='search' style={{ padding: '20px' }}>
         <input type="text" placeholder="Enter the user name" value={username} onChange={handleChange} />
         <button>        
           <Link to={{
             pathname:`/user/${username}/repos`, 
-        }}>Search</Link>
+        }} style={{ textDecoration: 'none', color: '#fff'}}>search<i className="bi bi-search ps-2 "></i></Link>
         </button>
-
     </div>
     <Home />
     </>
