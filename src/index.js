@@ -8,6 +8,7 @@ import './index.css';
 import App from './App.js';
 
 //跟後端溝通 https://github.com/scps960740/react-course-resources/tree/master/ch06/bruce-be
+//官方doc https://create-react-app.dev/docs/deployment/
 const express = require('express');
 const cors = require('cors');
 const path = require('path')
