@@ -19,14 +19,6 @@ const routerConfig  = [
   {
     path: '/',
     element: <SearchBar />,
-    children: {
-      path: '/user/:username/repos',
-      element: <Results />,
-      children: {
-        path: '/user/:username/repos/:repo',
-        element: <Repo />
-      }
-    }
   },
   {
     path: '/user/:username/repos',

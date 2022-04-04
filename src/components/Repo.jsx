@@ -30,7 +30,7 @@ const Repo = () => {
     console.log('a');
 
     try {  
-        const result = await axios(`https://api.github.com/repos/${username}/${repo}`);
+        const result = await axios.get(`https://api.github.com/repos/${username}/${repo}`)
         //item = result;
         setItem(result);
         console.log(result);
@@ -47,6 +47,7 @@ const Repo = () => {
         Repo name: { item.data.name } <br />
         Repo description: { item.data.description } <br />
         Repo network_count: { item.data.network_count } <br />
+        <a href={item.data.html_url} target="_blank">Repo網址按這裡</a>
     </div>
 };
 

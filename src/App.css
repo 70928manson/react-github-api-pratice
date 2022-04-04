@@ -68,7 +68,6 @@ div.wrapper{
 #home {
   grid-column: 1/5;
   grid-row: 1/2;
-  background-color: gray;
 }
 
 .result-list {
