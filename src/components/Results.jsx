@@ -39,7 +39,7 @@ const Results = () => {
     //當scroll到bottom，loading並發送api
     //如何判斷到bottom -> scrollTop + innerHeight >= scrollHeight
     if(e.target.documentElement.scrollTop + window.innerHeight + 1 >= e.target.documentElement.scrollHeight){
-      setTimeout(getRepos, 1000);
+      setTimeout(getRepos, 500);
       window.removeEventListener('scroll', handleScroll);  //為什麼要remove -> 如果只有單純監聽，scroll到bottom時會不斷觸發條件，多次發送api請求導致一次load 20、30個repo
     }
   }
