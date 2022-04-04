@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.65012d09.css",
-    "main.js": "/static/js/main.b95e9a62.js",
-    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.c1d7432ee75fa194e499.woff",
-    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.a13b815539b49de48d23.woff2",
-    "index.html": "/index.html",
-    "main.65012d09.css.map": "/static/css/main.65012d09.css.map",
-    "main.b95e9a62.js.map": "/static/js/main.b95e9a62.js.map"
+    "main.css": "/react-github-api-pratice/static/css/main.ed71c3f2.css",
+    "main.js": "/react-github-api-pratice/static/js/main.b95e9a62.js",
+    "static/media/bootstrap-icons.woff?": "/react-github-api-pratice/static/media/bootstrap-icons.c1d7432ee75fa194e499.woff",
+    "static/media/bootstrap-icons.woff2?": "/react-github-api-pratice/static/media/bootstrap-icons.a13b815539b49de48d23.woff2",
+    "index.html": "/react-github-api-pratice/index.html",
+    "main.ed71c3f2.css.map": "/react-github-api-pratice/static/css/main.ed71c3f2.css.map",
+    "main.b95e9a62.js.map": "/react-github-api-pratice/static/js/main.b95e9a62.js.map"
   },
   "entrypoints": [
-    "static/css/main.65012d09.css",
+    "static/css/main.ed71c3f2.css",
     "static/js/main.b95e9a62.js"
   ]
 }
