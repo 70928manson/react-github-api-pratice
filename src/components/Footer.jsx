@@ -1,5 +1,6 @@
 import React from "react";
 
+//bootstrap 5 Vue-food-footer
 const Footer = () => {
     return <div className="bg-dark py-5">
     <div className="container">
@@ -7,7 +8,7 @@ const Footer = () => {
         <p className="text-white h4">LOGO</p>
         <ul className="d-flex list-unstyled mb-0 h4">
           <li><a href="https://www.facebook.com/john.manson.988/" className="text-white mx-3" target="_blank"><i className="bi bi-facebook"></i></a></li>
-          {/* <li><a href="#" className="text-white mx-3" target="_blank"><i className="fab fa-instagram"></i></a></li> */}
+          {/* <li><a href="#" className="text-white mx-3" target="_blank"><i class="bi bi-instagram"></i></a></li> */}
           <li><a href="https://github.com/70928manson" className="text-white ms-3" target="_blank"><i className="bi bi-github"></i></a></li>
         </ul>
       </div>

@@ -19,28 +19,22 @@ const Results = () => {
   const getRepos = async () => {
     try {
       //await -> 確保這個執行完下面才繼續執行  
-      const result = await axios.get(`https://api.github.com/users/${username}/repos?page=${page}&per_page=10`);
+      //const result = await axios.get(`https://api.github.com/users/${username}/repos?page=${page}&per_page=10`);
 
-      // await axios.get(`https://api.github.com/users/${username}/repos?page=${page}&per_page=10`)
-      //   .then((res) => {
-      //     const tenMoreRepos = [];
-      //     res.data.forEach((data) => tenMoreRepos.push(data))
-      //     setRepos((repos) => [...repos, ...tenMoreRepos]);
-      //     page += 1;
-      //     window.addEventListener('scroll', handleScroll);
-      //   })
-      //   .catch((err) => {
-      //     console.log(err);
-      //     alert('此用戶名稱不存在')
-      //   })
-      
-      const tenMoreRepos = [];
-      result.data.forEach((data) => tenMoreRepos.push(data))
-      setRepos((repos) => [...repos, ...tenMoreRepos]);
+      await axios.get(`https://api.github.com/users/${username}/repos?page=${page}&per_page=10`)
+        .then((res) => {
+          const tenMoreRepos = [];
+          res.data.forEach((data) => tenMoreRepos.push(data))
+          setRepos((repos) => [...repos, ...tenMoreRepos]);
+          page += 1;
+          window.addEventListener('scroll', handleScroll);
+        })
+        .catch((err) => {
+          console.log(err);
+          alert('此用戶名稱不存在')
+        })
       //console.log('results: ' ,result);
       //console.log('item (repos): ' ,repos);
-      page += 1;
-      window.addEventListener('scroll', handleScroll);
     }catch(err){
         console.log(err);
     }
@@ -64,7 +58,7 @@ const Results = () => {
       repos.length !==0 ? ( 
       repos.map((item, index) => 
           <div
-              key= {index + item.id}  //只有item.id會發生兩個div擁有相同id的情況，解決辦法為加上index(這是好方法嘛)
+              key= {index + item.id}  //只有item.id會發生兩個div擁有相同id的情況，解決辦法為加上index
               className="resultList">
                 <div>
                 第 {index+1+i} 個 <br />

@@ -13,7 +13,6 @@ function Home() {
             <p>預設頁面為搜尋欄</p>
             <p>輸入有效的用戶名稱後會轉至該用戶的repos列表頁面</p>
             <p>點擊detail按鈕可看到該repo的細節內容</p>
-
         </div>
     )
 }

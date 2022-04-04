@@ -46,6 +46,5 @@ const Repo = () => {
         </div>
     </div>
 };
-
-//export 'useEffect' (imported as 'useEffect') was not found in 'react-router-dom'   
+   
 export default Repo;

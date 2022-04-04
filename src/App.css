@@ -66,6 +66,14 @@ url(https://fonts.googleapis.com/css?family=Open+Sans);
   padding-top: 20px;
 }
 
+.home h3 {
+  padding: 5px 0;
+}
+
+.home p {
+  padding: 10px 5px;
+}
+
 /*repos*/
 .resultList {
   background-color: #dbd4d4e0;

@@ -8,7 +8,7 @@ import { useRoutes } from "react-router-dom";
 import Repo from "./components/Repo";
 
 //className動態綁定
-//header searchBat result footer
+//header searchBar result(repos) repo footer
 
 function NoMatch() {
   return <p>NoMatch</p>
