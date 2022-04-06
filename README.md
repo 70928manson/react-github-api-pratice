@@ -10,13 +10,10 @@
 
 ## 作業架構： 
 預設頁面為搜尋欄
+
 輸入有效的用戶名稱後會轉至該用戶的repos列表頁面
+
 點擊detail按鈕可看到該repo的細節內容
-
-
-
-
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
