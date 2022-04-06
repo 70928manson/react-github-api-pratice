@@ -14,6 +14,10 @@
 點擊detail按鈕可看到該repo的細節內容
 
 
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
