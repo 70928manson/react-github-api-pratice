@@ -1,7 +1,7 @@
 # 2022 react-github-api
 
 
-### 使用套件: axios、bootstrap 5、bootstrap-icons
+### 使用套件: axios、bootstrap 5、bootstrap-icons、react、react-dom、react-router-dom
 
 axios: npm install axios
 
