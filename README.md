@@ -1,5 +1,16 @@
 # 2022 react-github-api
 
+
+### 使用套件: axios、bootstrap 5、bootstrap-icons
+
+axios: npm install axios
+
+bootstrap 5: npm install bootstrap
+
+bootstrap-icons: npm i bootstrap-icons
+
+
+
 ## 文件說明：
 1. 輸入想搜尋的用戶名稱後按下search按鈕
 2. 若此用戶存在，會轉換route顯示該用戶的repos；若不存在，會跳出alert提醒該用戶不存在
@@ -14,6 +25,8 @@
 輸入有效的用戶名稱後會轉至該用戶的repos列表頁面
 
 點擊detail按鈕可看到該repo的細節內容
+
+-----------------------------------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
