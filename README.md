@@ -1,6 +1,7 @@
 # 2022 react-github-api
 
 Github page: https://70928manson.github.io/react-github-api-pratice/
+
 使用HashRouter，網址會有#字號 QQ
 
 ### 使用套件: axios、bootstrap 5、bootstrap-icons、react、react-dom、react-router-dom
