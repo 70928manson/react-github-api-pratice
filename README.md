@@ -13,7 +13,9 @@ bootstrap-icons: npm i bootstrap-icons
 ### 檢視專案
 
 可透過下面連結直接觀看專案demo
+
 Github page: https://70928manson.github.io/react-github-api-pratice/
+
 為了上傳至Github page，原本的brouserRouter改成使用HashRouter，網址會有#字號 QQ
 
 ### 文件說明：
