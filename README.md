@@ -29,10 +29,16 @@ Github page: https://70928manson.github.io/react-github-api-pratice/
 #### 如何實現Infinite scroll
 
 若要達成Infinite scroll，必須先判斷使用者是否滾到底部才能發送api
+
 因此先建立window.addEventListener監聽使用者scroll
+
 取得使用者的scrollTop (在有滾動條時，滾動條向下滾動的距離也就是元素頂部被遮住部分的高度)、innerHeight (window內部高度)
+
 將兩者相加並與scrollHeight (元素內容高度，包括由於scroll後看不見的內容)比大小，判斷是否到達底部
+
 到達底部後發送api請求
+
 為了避免因為停在底部符合條件，導致程式被執行多次
+
 scroll監聽會在到達底部後被removeEventListener
 
