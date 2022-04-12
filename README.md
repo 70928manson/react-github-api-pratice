@@ -1,10 +1,8 @@
 # 2022 react-github-api
 
-Github page: https://70928manson.github.io/react-github-api-pratice/
+## 專案講解
 
-使用HashRouter，網址會有#字號 QQ
-
-### 使用套件: axios、bootstrap 5、bootstrap-icons、react、react-dom、react-router-dom
+### 使用環境及工具: 採用axios串接api、並以bootstrap 5 (footer)、bootstrap-icons (search-icon)協助美觀設計
 
 axios: npm install axios
 
@@ -12,90 +10,27 @@ bootstrap 5: npm install bootstrap
 
 bootstrap-icons: npm i bootstrap-icons
 
+### 檢視專案
 
+可透過下面連結直接觀看專案demo
+Github page: https://70928manson.github.io/react-github-api-pratice/
+為了上傳至Github page，原本的brouserRouter改成使用HashRouter，網址會有#字號 QQ
 
-## 文件說明：
+### 文件說明：
 1. 輸入想搜尋的用戶名稱後按下search按鈕
-2. 若此用戶存在，會轉換route顯示該用戶的repos；若不存在，會跳出alert提醒該用戶不存在
+2. 若此用戶存在，會轉換route顯示該用戶的repos；若不存在，會跳出該用戶不存在的提醒訊息
 3. 在repos列表，可點擊detail按鈕進入單一repo頁面
 4. 在單一repo網頁點擊 "Repo's github link"，可另開新分頁至該repo的github頁面
 5. 在repos列表與單一repo頁面上方有 "back to SearchBar"，點擊可以回到這裡
 
 
-## 作業架構： 
-預設頁面為搜尋欄
+#### 如何實現Infinite scroll
 
-輸入有效的用戶名稱後會轉至該用戶的repos列表頁面
+若要達成Infinite scroll，必須先判斷使用者是否滾到底部才能發送api
+因此先建立window.addEventListener監聽使用者scroll
+取得使用者的scrollTop (在有滾動條時，滾動條向下滾動的距離也就是元素頂部被遮住部分的高度)、innerHeight (window內部高度)
+將兩者相加並與scrollHeight (元素內容高度，包括由於scroll後看不見的內容)比大小，判斷是否到達底部
+到達底部後發送api請求
+為了避免因為停在底部符合條件，導致程式被執行多次
+scroll監聽會在到達底部後被removeEventListener
 
-點擊detail按鈕可看到該repo的細節內容
-
------------------------------------------------------------
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
