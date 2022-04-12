@@ -12,7 +12,7 @@ bootstrap-icons: npm i bootstrap-icons
 
 ### 檢視專案
 
-可透過下面連結直接觀看專案demo
+可透過下面連結觀看專案demo
 
 Github page: https://70928manson.github.io/react-github-api-pratice/
 
