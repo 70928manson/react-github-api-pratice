@@ -2,21 +2,13 @@
 
 ## 專案講解
 
-### 使用環境及工具: 採用axios串接api、並以bootstrap 5 (footer)、bootstrap-icons (search-icon)協助美觀設計
-
-axios: npm install axios
-
-bootstrap 5: npm install bootstrap
-
-bootstrap-icons: npm i bootstrap-icons
-
 ### 檢視專案
 
 可透過下面連結觀看專案demo
 
 Github page: https://70928manson.github.io/react-github-api-pratice/
 
-為了上傳至Github page，原本的brouserRouter改成使用HashRouter，網址會有#字號 QQ
+紀錄: 為了上傳至Github page，原本的brouserRouter改成使用HashRouter，網址會有#字號 QQ
 
 ### 文件說明：
 1. 輸入想搜尋的用戶名稱後按下search按鈕
